@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONInventory", "JSONInventory\JSONInventory.csproj", "{00DA055B-CCEF-4A00-A3EC-3827AD0F4393}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00DA055B-CCEF-4A00-A3EC-3827AD0F4393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DA055B-CCEF-4A00-A3EC-3827AD0F4393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DA055B-CCEF-4A00-A3EC-3827AD0F4393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DA055B-CCEF-4A00-A3EC-3827AD0F4393}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {833A90E6-36C3-4EB2-A180-252AEA8AC5F0}
+	EndGlobalSection
+EndGlobal

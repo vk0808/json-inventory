@@ -1,0 +1,13 @@
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\bin\Debug\netcoreapp3.1\JSONInventory.exe
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\bin\Debug\netcoreapp3.1\JSONInventory.deps.json
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\bin\Debug\netcoreapp3.1\JSONInventory.runtimeconfig.json
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\bin\Debug\netcoreapp3.1\JSONInventory.runtimeconfig.dev.json
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\bin\Debug\netcoreapp3.1\JSONInventory.dll
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\bin\Debug\netcoreapp3.1\JSONInventory.pdb
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.csproj.AssemblyReference.cache
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.AssemblyInfoInputs.cache
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.AssemblyInfo.cs
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.csproj.CoreCompileInputs.cache
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.dll
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.pdb
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.genruntimeconfig.cache
