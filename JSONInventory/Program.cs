@@ -9,7 +9,7 @@ namespace JSONInventory
             FetchDetails fetch = new FetchDetails();
 
             Console.WriteLine(fetch.welcome());
-            Console.WriteLine(fetch.menu());
+            fetch.performTask(fetch.menu());
         }
     }
 }
