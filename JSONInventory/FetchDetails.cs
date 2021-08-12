@@ -6,11 +6,13 @@ namespace JSONInventory
 {
     public class FetchDetails
     {
+        // Method to display welcome message
         public string welcome()
         {
             return "Welcome to JSON Inventory Data Management System\n";
         }
 
+        // Method to display menu and get task 
         public int menu()
         {
             int task = 0;
