@@ -25,26 +25,26 @@ namespace JSONInventory
                 Console.WriteLine("Enter the task you want to perform\n1. Add data into Inventory\n2. View Inventory details\n3. Exit");
                 task = int.Parse(Console.ReadLine());
 
-                if (task == 3)
+                if (task == 3) // exit
                 {
                     Console.WriteLine("\nExiting...");
                     break;
                 }
 
-                if (task != 1 && task != 2)
+                if (task != 1 && task != 2) // when wrong number
                 {
                     Console.WriteLine("You have enterd wrong task number\n");
                 }
-                else
+                else // performing task
                 {
                     performTask(task);
-                    task = 5;
+                    task = 5; // to keep inside loop
                 }
             }
         }
 
-
-        public string itemsMenu()
+        // Display and return item - rice, wheat, pulses
+        private string itemsMenu()
         {
             int itemChoice = 0;
             while (itemChoice != 1 && itemChoice != 2 && itemChoice != 3)
@@ -62,7 +62,7 @@ namespace JSONInventory
 
 
         // Custom Method to get item details
-        public double getDetails(string name, string info)
+        private double getDetails(string name, string info)
         {
             Console.WriteLine($"\nEnter {info} for {name}: ");
             double data = double.Parse(Console.ReadLine());
@@ -71,7 +71,7 @@ namespace JSONInventory
 
 
         // Method to perform task like add or view inventory details
-        public void performTask(int choice)
+        private void performTask(int choice)
         {
             switch (choice)
             {
