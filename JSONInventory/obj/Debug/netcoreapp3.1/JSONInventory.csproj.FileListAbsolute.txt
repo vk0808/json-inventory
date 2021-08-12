@@ -11,3 +11,5 @@ C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSO
 C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.dll
 C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.pdb
 C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.genruntimeconfig.cache
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\vk476\Desktop\Fellowship Program\Practice Problems\Day11-12Problems\JSONInventory\JSONInventory\obj\Debug\netcoreapp3.1\JSONInventory.csproj.CopyComplete

@@ -6,7 +6,10 @@ namespace JSONInventory
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to JSON Inventory Data Management System\n");
+            FetchDetails fetch = new FetchDetails();
+
+            Console.WriteLine(fetch.welcome());
+            Console.WriteLine(fetch.menu());
         }
     }
 }
