@@ -17,20 +17,30 @@ namespace JSONInventory
         }
 
         // Method to display menu and get task 
-        public int menu()
+        public void menu()
         {
-            int task = 0;
-            while (task != 1 && task != 2)
+            int task = 5;
+            while (task != 1 && task != 2 && task != 3)
             {
-                Console.WriteLine("Enter the task you want to perform\n1. Add data into Inventory\n2. View Inventory details");
+                Console.WriteLine("Enter the task you want to perform\n1. Add data into Inventory\n2. View Inventory details\n3. Exit");
                 task = int.Parse(Console.ReadLine());
+
+                if (task == 3)
+                {
+                    Console.WriteLine("\nExiting...");
+                    break;
+                }
 
                 if (task != 1 && task != 2)
                 {
                     Console.WriteLine("You have enterd wrong task number\n");
                 }
+                else
+                {
+                    performTask(task);
+                    task = 5;
+                }
             }
-            return task;
         }
 
 
@@ -89,6 +99,7 @@ namespace JSONInventory
                     File.WriteAllText(@"..\..\..\InventoryList.json", json);
 
                     Console.WriteLine("\nInventory details has been added successFully to JSON File.");
+
                     break;
 
 
