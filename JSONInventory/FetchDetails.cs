@@ -39,7 +39,7 @@ namespace JSONInventory
             int itemChoice = 0;
             while (itemChoice != 1 && itemChoice != 2 && itemChoice != 3)
             {
-                Console.WriteLine("Enter what you want add\n1. Rice\n2. Wheat\n3. Pulses");
+                Console.WriteLine("\nEnter what you want add\n1. Rice\n2. Wheat\n3. Pulses");
                 itemChoice = int.Parse(Console.ReadLine());
 
                 if (itemChoice != 1 && itemChoice != 2 && itemChoice != 3)
@@ -54,7 +54,7 @@ namespace JSONInventory
         // Custom Method to get item details
         public double getDetails(string name, string info)
         {
-            Console.WriteLine($"Enter {info} for {name}: ");
+            Console.WriteLine($"\nEnter {info} for {name}: ");
             double data = double.Parse(Console.ReadLine());
             return data;
         }
@@ -80,7 +80,7 @@ namespace JSONInventory
 
                         inventoryList.Add(item);
 
-                        Console.WriteLine("Item added to list. Do you want to add more: \ny: yes\nn: no");
+                        Console.WriteLine("\nItem added to list. Do you want to add more: \ny: yes\nn: no");
                         confirm = Console.ReadLine();
                     }
 
@@ -88,12 +88,29 @@ namespace JSONInventory
                     string json = JsonConvert.SerializeObject(inventoryList);
                     File.WriteAllText(@"..\..\..\InventoryList.json", json);
 
-                    Console.WriteLine("Inventory details has been added successFully to JSON File.");
+                    Console.WriteLine("\nInventory details has been added successFully to JSON File.");
                     break;
 
 
                 // View inventory
                 case 2:
+
+                    Console.WriteLine("\nItems stored in Inventory:\n");
+
+                    //Deserializing JSON file
+                    string file = File.ReadAllText(@"..\..\..\InventoryList.json");
+                    List<InventoryList> dataFile = JsonConvert.DeserializeObject<List<InventoryList>>(file);
+
+                    //Display data stored in JSON file
+                    foreach (var item in dataFile)
+                    {
+                        // Display name, weight, price per kg
+                        Console.WriteLine($"Name : {item.name}\nWeight : {item.weight}\nPrice per Kg: {item.pricePerkg}");
+
+                        // Calulate the total value
+                        Console.WriteLine($"Total value of {item.name} =  {(item.weight * item.pricePerkg)}: ");
+                        Console.WriteLine("--------------------------------------------\n");
+                    }
                     break;
 
                 default:
