@@ -22,7 +22,7 @@ namespace JSONInventory
             int task = 5;
             while (task != 1 && task != 2 && task != 3)
             {
-                Console.WriteLine("Enter the task you want to perform\n1. Add data into Inventory\n2. View Inventory details\n3. Exit");
+                Console.WriteLine("\nEnter the task you want to perform\n1. Add data into Inventory\n2. View Inventory details\n3. Exit\n");
                 task = int.Parse(Console.ReadLine());
 
                 if (task == 3) // exit
@@ -49,7 +49,7 @@ namespace JSONInventory
             int itemChoice = 0;
             while (itemChoice != 1 && itemChoice != 2 && itemChoice != 3)
             {
-                Console.WriteLine("\nEnter what you want add\n1. Rice\n2. Wheat\n3. Pulses");
+                Console.WriteLine("\nEnter what you want add\n1. Rice\n2. Wheat\n3. Pulses\n");
                 itemChoice = int.Parse(Console.ReadLine());
 
                 if (itemChoice != 1 && itemChoice != 2 && itemChoice != 3)
@@ -69,6 +69,33 @@ namespace JSONInventory
             return data;
         }
 
+        // Method to write to json file
+        private void writeJSON(string path, List<InventoryList> list)
+        {
+            // JSON-Serializing
+            string json = JsonConvert.SerializeObject(list);
+            File.WriteAllText(path, json);
+
+            Console.WriteLine("\nInventory details has been added successFully to JSON File.\n");
+        }
+
+        // Method to read json file
+        private List<InventoryList> readJSON(string path)
+        {
+            //Deserializing JSON file
+            if (File.Exists(path) == false)
+            {
+                List<InventoryList> list = new List<InventoryList>();
+                writeJSON(path, list);
+                Console.WriteLine("\nThere is no file. New json file created\n");
+            }
+
+            string file = File.ReadAllText(path);
+            List<InventoryList> dataFile = JsonConvert.DeserializeObject<List<InventoryList>>(file);
+            return dataFile;
+
+        }
+
 
         // Method to perform task like add or view inventory details
         private void performTask(int choice)
@@ -77,28 +104,71 @@ namespace JSONInventory
             {
                 // Add to inventory
                 case 1:
-                    List<InventoryList> inventoryList = new List<InventoryList>();
+
                     string confirm = "y";
                     while (confirm.ToLower() == "y")
                     {
+                        bool notFound = true; ;
+                        // create a list from the inventory json file
+                        List<InventoryList> inventoryList = readJSON(@"..\..\..\InventoryList.json");
 
+                        // display menu
                         string name = itemsMenu();
-                        double weight = getDetails(name, "weight");
-                        double pricePerKg = getDetails(name, "price per kg");
 
-                        InventoryList item = new InventoryList(name, weight, pricePerKg);
+                        // loop through to every item in list
+                        foreach (var invItem in inventoryList)
+                        {
+                            // check if the item present in list is equal to the name selected
+                            // then update
+                            if (invItem.name.Contains(name))
+                            {
+                                Console.WriteLine($"\nItem already exits. You can update\n1. Weight ({invItem.weight})\n2. Price per kg ({invItem.pricePerkg})");
+                                int ch = int.Parse(Console.ReadLine());
+                                switch (ch)
+                                {
+                                    case 1:
+                                        Console.WriteLine($"\nEnter updated weight({invItem.name}): ");
+                                        invItem.weight = double.Parse(Console.ReadLine());
+                                        break;
+                                    case 2:
+                                        Console.WriteLine($"\nEnter updated price per kg({invItem.name}): ");
+                                        invItem.pricePerkg = double.Parse(Console.ReadLine());
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                // use writeJSON() to write JSON
+                                writeJSON(@"..\..\..\InventoryList.json", inventoryList);
+                                notFound = false;
+                                break;
+                            }
+                            else
+                            {
+                                notFound = true;
+                            }
 
-                        inventoryList.Add(item);
+                        }
 
-                        Console.WriteLine("\nItem added to list. Do you want to add more: \ny: yes\nn: no");
+                        // if it's not there then add
+                        if (notFound)
+                        {
+                            Console.WriteLine("\nItem doesnot exits.");
+                            double weight = getDetails(name, "weight");
+                            double pricePerKg = getDetails(name, "price per kg");
+                            InventoryList item = new InventoryList(name, weight, pricePerKg);
+                            inventoryList.Add(item);
+
+                            // use writeJSON() to write JSON
+                            writeJSON(@"..\..\..\InventoryList.json", inventoryList);
+
+                            break;
+                        }
+
+                        // ask if they want to continue
+                        Console.WriteLine("\nDo you want to add more: \ny: yes\nn: no\n");
                         confirm = Console.ReadLine();
+
                     }
-
-                    // JSON-Serializing
-                    string json = JsonConvert.SerializeObject(inventoryList);
-                    File.WriteAllText(@"..\..\..\InventoryList.json", json);
-
-                    Console.WriteLine("\nInventory details has been added successFully to JSON File.");
 
                     break;
 
@@ -108,9 +178,9 @@ namespace JSONInventory
 
                     Console.WriteLine("\nItems stored in Inventory:\n");
 
-                    //Deserializing JSON file
-                    string file = File.ReadAllText(@"..\..\..\InventoryList.json");
-                    List<InventoryList> dataFile = JsonConvert.DeserializeObject<List<InventoryList>>(file);
+
+                    // use readJSON() to read JSON
+                    List<InventoryList> dataFile = readJSON(@"..\..\..\InventoryList.json");
 
                     //Display data stored in JSON file
                     foreach (var item in dataFile)
